@@ -53,16 +53,6 @@ function populateUser() {
 					name: 'Charlie Angel',
 					email: 'charlie@example.com',
 					password: encryptPass
-				},
-				{
-					name: 'Deepak',
-					email: 'deepak@example.com',
-					password: encryptPass
-				},
-				{
-					name: 'Ernest Prakasa',
-					email: 'ernest@example.com',
-					password: encryptPass
 				}
 			];
 			UserModel.create(USER_DATA).then(() => {
