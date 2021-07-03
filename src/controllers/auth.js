@@ -18,13 +18,13 @@ exports.checkLogin = async (req, res) => {
 			const chkPass = await checkPassword(req.body.password, password);
 			if (chkPass) {
 				let resUser = JSON.parse(JSON.stringify(user));
-				delete resUser['_id'];
 				delete resUser['is_deleted'];
 				delete resUser['password'];
 				delete resUser['createdAt'];
 				delete resUser['updatedAt'];
 				delete resUser['__v'];
 				resUser['token'] = await generateToken(resUser, '8h');
+				delete resUser['_id'];
 				successLog(req, res, {
 					status: true, message: 'Login success', result: resUser, code: StatusCodes.OK
 				});
